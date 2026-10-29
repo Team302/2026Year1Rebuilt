@@ -102,6 +102,7 @@ namespace ctre
                     {
                         (void)mode;
                         m_output = value;
+                        Set(value);
                     }
 
                     void Set(double outputValue)
