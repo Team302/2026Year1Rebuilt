@@ -22,5 +22,6 @@ enum class RobotIdentifier
 	CHASSIS_BOT_9999 = 9999,
 	CHASSIS_BOT_9998 = 9998,
 	CHASSIS_BOT_9997 = 9997,
+	TEST_302 = 3,
 	SIM_BOT_0 = 0,
 };

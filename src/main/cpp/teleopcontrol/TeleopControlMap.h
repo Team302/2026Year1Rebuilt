@@ -163,6 +163,7 @@ inline const robin_hood::unordered_map<TeleopControlFunctions::FUNCTION, const T
     // Season Specific Driver Controls
 
     // Co-Pilot Controls
+    {TeleopControlFunctions::INTAKE, copilotAButton},
 };
 
 constexpr TeleopControlAxis driverLJoystickX = {TeleopControlMappingEnums::DRIVER, TeleopControlMappingEnums::LEFT_JOYSTICK_X, TeleopControlMappingEnums::APPLY_STANDARD_DEADBAND, TeleopControlMappingEnums::AXIS_PROFILE::LINEAR, TeleopControlMappingEnums::REVERSED, 1.0};

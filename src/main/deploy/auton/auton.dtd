@@ -11,8 +11,7 @@
           headingOption     CDATA "IGNORE"
           heading           CDATA "0.0"
 		  choreoname		CDATA #IMPLIED
-		  intakeState		 ( STATE_OFF | STATE_INTAKE | STATE_EXPEL | STATE_LAUNCH | STATE_LOAD_HOPPER ) #IMPLIED
-		  launcherState		 ( STATE_IDLE | STATE_PREPARE_TO_LAUNCH | STATE_MANUAL_LAUNCH ) #IMPLIED
+		  intakeState		 ( STATE_OFF | STATE_INTAKE ) #IMPLIED
 >
 
 
