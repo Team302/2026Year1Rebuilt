@@ -43,45 +43,10 @@ public:
         TIPCORRECTION_TOGGLE,
 
         // Season Specific Drive Commands
-        DRIVE_OVER_BUMP,
-        DRIVE_ALONG_NEAREST_WALL,
-        DRIVE_TO_HUB,
-        DRIVE_TO_OUTPOST,
-        DRIVE_TO_TOWER,
-        SWEEP_BEHIND_HUB,
-        SWEEP_BEHIND_HUB_INCREMENT,
-        SWEEP_BEHIND_HUB_DECREMENT,
-        DRIVE_TO_DEPOT,
-        DRIVE_TO_FUEL,
-        AUTO_DEFEND,
-        DRIVE_TO_TRENCH,
 
         // Mechanisms specific
         // Intake
-        INTAKE,
-        EXPEL,
-        INTAKE_OUT,
-        INTAKE_IN,
-        MANUAL_INTAKE_OUT,
-        MANUAL_INTAKE_IN,
-        EXTENDER_MODIFIER,
-
-        // LAUNCHER
-        LAUNCHER_OFF,
-        LAUNCH,
-        LAUNCH_OVERRIDE,
-        MANUAL_LAUNCH,
-        TURRET_ENABLE,
-
-        // TARGET OFFSETS
-        UPDATE_TARGET_OFFSET_UP,
-        UPDATE_TARGET_OFFSET_DOWN,
-        UPDATE_TARGET_OFFSET_LEFT,
-        UPDATE_TARGET_OFFSET_RIGHT,
-        UPDATE_DEPOT_PASSING_TARGET_X,
-        UPDATE_DEPOT_PASSING_TARGET_Y,
-        UPDATE_OUTPOST_PASSING_TARGET_X,
-        UPDATE_OUTPOST_PASSING_TARGET_Y
+        INTAKE
 
     };
 };
