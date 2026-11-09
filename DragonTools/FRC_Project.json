@@ -1,0 +1,237 @@
+{
+    "project_name": "New_FRC_Project",
+    "robots": {
+        "YEARONE_302": {
+            "name": "Yearone",
+            "team_number": 302,
+            "mechanisms": {
+                "Chassis": {
+                    "hardware": [
+                        {
+                            "type": "SparkMax",
+                            "name": "LeftLeader",
+                            "id": 0,
+                            "canbus": 0,
+                            "config": {
+                                "MotorType": "kBrushed",
+                                "Inverted": false,
+                                "IdleMode": "kBrake",
+                                "SmartCurrentLimit": 40,
+                                "OpenLoopRampRate": 0.1,
+                                "ClosedLoopRampRate": 0.25,
+                                "Follower": {
+                                    "Enabled": false,
+                                    "FollowerID": 0,
+                                    "Invert": false
+                                }
+                            }
+                        },
+                        {
+                            "type": "SparkMax",
+                            "name": "LeftFollower",
+                            "id": 1,
+                            "canbus": 0,
+                            "config": {
+                                "MotorType": "kBrushed",
+                                "Inverted": false,
+                                "IdleMode": "kBrake",
+                                "SmartCurrentLimit": 40,
+                                "OpenLoopRampRate": 0.1,
+                                "ClosedLoopRampRate": 0.25,
+                                "Follower": {
+                                    "Enabled": true,
+                                    "FollowerID": 0,
+                                    "Invert": true
+                                }
+                            }
+                        },
+                        {
+                            "type": "SparkMax",
+                            "name": "RightLeader",
+                            "id": 2,
+                            "canbus": 0,
+                            "config": {
+                                "MotorType": "kBrushed",
+                                "Inverted": false,
+                                "IdleMode": "kBrake",
+                                "SmartCurrentLimit": 40,
+                                "OpenLoopRampRate": 0.1,
+                                "ClosedLoopRampRate": 0.25,
+                                "Follower": {
+                                    "Enabled": false,
+                                    "FollowerID": 0,
+                                    "Invert": false
+                                }
+                            }
+                        },
+                        {
+                            "type": "SparkMax",
+                            "name": "RightFollower",
+                            "id": 3,
+                            "canbus": 0,
+                            "config": {
+                                "MotorType": "kBrushed",
+                                "Inverted": true,
+                                "IdleMode": "kBrake",
+                                "SmartCurrentLimit": 40,
+                                "OpenLoopRampRate": 0.1,
+                                "ClosedLoopRampRate": 0.25,
+                                "Follower": {
+                                    "Enabled": true,
+                                    "FollowerID": 2,
+                                    "Invert": true
+                                }
+                            }
+                        }
+                    ],
+                    "control_data": [
+                        {
+                            "name": "PercentOut",
+                            "ControlDevice": "CTRE",
+                            "ControlRequest": "DutyCycleOut",
+                            "Unit": "double",
+                            "p": 0.0,
+                            "i": 0.0,
+                            "d": 0.0,
+                            "f": 0.0,
+                            "velocity_gain": 0.0,
+                            "acceleration_gain": 0.0,
+                            "static_friction_gain": 0.0,
+                            "integral_zone": 0.0,
+                            "max_acceleration": 0.0,
+                            "cruise_velocity": 0.0,
+                            "GravityTypeValue": "Elevator_Static",
+                            "StaticFeedforwardSignValue": "UseVelocitySign"
+                        }
+                    ],
+                    "states": [
+                        {
+                            "name": "ArcadeDrive",
+                            "motor_targets": [
+                                {
+                                    "HardwareName": "LeftLeader",
+                                    "Enabled": false,
+                                    "TargetValue": 0.0,
+                                    "ControlData": "PercentOut",
+                                    "Unit": "double"
+                                },
+                                {
+                                    "HardwareName": "RightLeader",
+                                    "Enabled": false,
+                                    "TargetValue": 0.0,
+                                    "ControlData": "PercentOut",
+                                    "Unit": "double"
+                                }
+                            ],
+                            "solenoid_targets": []
+                        },
+                        {
+                            "name": "TankDrive",
+                            "motor_targets": [
+                                {
+                                    "HardwareName": "LeftLeader",
+                                    "Enabled": false,
+                                    "TargetValue": 0.0,
+                                    "ControlData": "PercentOut",
+                                    "Unit": "double"
+                                },
+                                {
+                                    "HardwareName": "RightLeader",
+                                    "Enabled": false,
+                                    "TargetValue": 0.0,
+                                    "ControlData": "PercentOut",
+                                    "Unit": "double"
+                                }
+                            ],
+                            "solenoid_targets": []
+                        }
+                    ]
+                },
+                "vroon": {
+                    "hardware": [
+                        {
+                            "type": "SparkMax",
+                            "name": "Feedinator",
+                            "id": 4,
+                            "canbus": 0,
+                            "config": {
+                                "MotorType": "kBrushed",
+                                "Inverted": false,
+                                "IdleMode": "kBrake",
+                                "SmartCurrentLimit": 40,
+                                "OpenLoopRampRate": 0.1,
+                                "ClosedLoopRampRate": 0.25,
+                                "Follower": {
+                                    "Enabled": false,
+                                    "FollowerID": 0,
+                                    "Invert": false
+                                }
+                            }
+                        },
+                        {
+                            "type": "SparkMax",
+                            "name": "Lauchnattor",
+                            "id": 5,
+                            "canbus": 0,
+                            "config": {
+                                "MotorType": "kBrushed",
+                                "Inverted": false,
+                                "IdleMode": "kBrake",
+                                "SmartCurrentLimit": 40,
+                                "OpenLoopRampRate": 0.1,
+                                "ClosedLoopRampRate": 0.25,
+                                "Follower": {
+                                    "Enabled": false,
+                                    "FollowerID": 0,
+                                    "Invert": false
+                                }
+                            }
+                        }
+                    ],
+                    "control_data": [
+                        {
+                            "name": "PercentOut",
+                            "ControlDevice": "CTRE",
+                            "ControlRequest": "DutyCycleOut",
+                            "Unit": "double",
+                            "p": 0.0,
+                            "i": 0.0,
+                            "d": 0.0,
+                            "f": 0.0,
+                            "velocity_gain": 0.0,
+                            "acceleration_gain": 0.0,
+                            "static_friction_gain": 0.0,
+                            "integral_zone": 0.0,
+                            "max_acceleration": 0.0,
+                            "cruise_velocity": 0.0,
+                            "GravityTypeValue": "Elevator_Static",
+                            "StaticFeedforwardSignValue": "UseVelocitySign"
+                        }
+                    ],
+                    "states": [
+                        {
+                            "name": "Off",
+                            "motor_targets": [
+                                {
+                                    "HardwareName": "Feedinator",
+                                    "Enabled": false,
+                                    "TargetValue": 0.0,
+                                    "ControlData": "PercentOut",
+                                    "Unit": "double"
+                                },
+                                {
+                                    "HardwareName": "Lauchnattor",
+                                    "Enabled": false,
+                                    "TargetValue": 0.0,
+                                    "ControlData": "PercentOut",
+                                    "Unit": "double"
+                                }
+                            ],
+                            "solenoid_targets": []
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
