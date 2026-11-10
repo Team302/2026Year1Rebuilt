@@ -32,7 +32,8 @@ public:
 	enum MECHANISM_TYPE
 	{
 		UNKNOWN_MECHANISM = -1,
-        CHASSIS,    
+        CHASSIS,
+        VROON,    
 		MAX_MECHANISM_TYPES
 	};
 
