@@ -1,3 +1,4 @@
+
 //====================================================================================================================================================
 // Copyright 2026 Lake Orion Robotics FIRST Team 302
 //
@@ -16,6 +17,8 @@
 #include "RobotContainer.h"
 
 #include "mechanisms/configs/MechanismConfigMgr.h"
+#include "mechanisms/chassis/ChassisContainer.h"
+#include "mechanisms/vroon/vroonContainer.h"
 #include "wpi/system/RobotController.hpp"
 
 RobotContainer::RobotContainer()
@@ -23,4 +26,6 @@ RobotContainer::RobotContainer()
     // Mechanism
     int32_t teamNumber = wpi::RobotController::GetTeamNumber();
     MechanismConfigMgr::GetInstance()->InitRobot((RobotIdentifier)teamNumber);
+    ChassisContainer::GetInstance()->ConfigureBindings();
+    vroonContainer::GetInstance()->ConfigureBindings();
 }
