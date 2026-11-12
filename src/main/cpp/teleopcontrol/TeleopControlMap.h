@@ -165,6 +165,7 @@ inline const robin_hood::unordered_map<TeleopControlFunctions::FUNCTION, const T
     // Season Specific Driver Controls
 
     // Co-Pilot Controls
+    {TeleopControlFunctions::SHORT_LAUNCH, copilotAButton},
     {TeleopControlFunctions::LONG_LAUNCH, copilotYButton},
 };
 
