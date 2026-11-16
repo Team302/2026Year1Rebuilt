@@ -1,3 +1,4 @@
+
 //====================================================================================================================================================
 // Copyright 2026 Lake Orion Robotics FIRST Team 302
 //
@@ -153,8 +154,7 @@ wpi::cmd::Trigger VroomContainer::GetSpinUpShortTrigger()
     return wpi::cmd::RobotModeTriggers::Teleop() && TeleopControl::GetInstance()->GetCommandTrigger(TeleopControlFunctions::Function);
     */
 
-    return wpi::cmd::Trigger([]()
-                             { return false; });
+    return wpi::cmd::RobotModeTriggers::Teleop() && TeleopControl::GetInstance()->GetCommandTrigger(TeleopControlFunctions::SHORT_LAUNCH);
 }
 wpi::cmd::Trigger VroomContainer::GetShortShotTrigger()
 {
@@ -167,7 +167,6 @@ wpi::cmd::Trigger VroomContainer::GetShortShotTrigger()
     or
     return wpi::cmd::RobotModeTriggers::Teleop() && TeleopControl::GetInstance()->GetCommandTrigger(TeleopControlFunctions::Function);
     */
-
     return wpi::cmd::Trigger([]()
                              { return false; });
 }

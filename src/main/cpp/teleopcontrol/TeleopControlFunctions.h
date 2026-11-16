@@ -52,5 +52,7 @@ public:
                 EXPEL,
                 SPIN_UP_LONG,
                 LONG_LAUNCH,
+                SHORT_LAUNCH
+
         };
 };

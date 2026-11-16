@@ -1,3 +1,4 @@
+
 //====================================================================================================================================================
 // Copyright 2026 Lake Orion Robotics FIRST Team 302
 //
@@ -35,6 +36,9 @@ void VroomSpinUpShortCommand::Init()
     // Motor targets for SpinUpShort
     m_mechanism->UpdateTargetFeedinatorVoltageOut(m_feedinatorTarget);
     m_mechanism->UpdateTargetLaunchinatorVoltageOut(m_launchinatorTarget);
+
+    m_timer.Reset();
+    m_timer.Start();
 }
 
 void VroomSpinUpShortCommand::Run()
@@ -47,5 +51,5 @@ void VroomSpinUpShortCommand::Exit(bool interrupted)
 
 bool VroomSpinUpShortCommand::IsDone()
 {
-    return false; // Default continuous execution
+    return m_timer.HasElapsed(wpi::units::second_t(1.0)); // Default continuous execution
 }
