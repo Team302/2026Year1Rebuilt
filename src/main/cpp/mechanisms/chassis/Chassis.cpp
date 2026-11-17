@@ -56,8 +56,8 @@ void Chassis::CreateYearOneRobot2026()
     // --- Hardware Setup ---
     m_leftLeaderMotor = new rev::spark::SparkMax(0, 22, rev::spark::SparkLowLevel::MotorType::kBrushed);
     m_leftFollowerMotor = new rev::spark::SparkMax(0, 23, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_rightLeaderMotor = new rev::spark::SparkMax(0, 2, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_rightFollowerMotor = new rev::spark::SparkMax(0, 3, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_rightLeaderMotor = new rev::spark::SparkMax(0, 21, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_rightFollowerMotor = new rev::spark::SparkMax(0, 20, rev::spark::SparkLowLevel::MotorType::kBrushed);
 
     // --- Control Data Setup ---
     m_percentOut = new ControlData(

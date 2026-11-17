@@ -64,8 +64,8 @@ void Vroom::CreateYearOneRobot2026()
     Logger::GetLogger()->LogData(LOGGER_LEVEL::PRINT, string("Initializing mechanism"), string("Vroom for YEARONEROBOT_2026"), "");
 
     // --- Hardware Setup ---
-    m_feedinatorMotor = new rev::spark::SparkMax(0, 4, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_vroominatorMotor = new rev::spark::SparkMax(0, 5, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_feedinatorMotor = new rev::spark::SparkMax(0, 27, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_vroominatorMotor = new rev::spark::SparkMax(0, 26, rev::spark::SparkLowLevel::MotorType::kBrushed);
 
     // --- Control Data Setup ---
     m_voltageOut = new ControlData(
@@ -100,7 +100,7 @@ void Vroom::InitializeSparkMaxFeedinatorYearOneRobot2026()
 {
     rev::spark::SparkMaxConfig configs{};
     configs.Inverted(false);
-    configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kBrake);
+    configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kCoast);
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
     configs.ClosedLoopRampRate(0.25);
@@ -111,7 +111,7 @@ void Vroom::InitializeSparkMaxLaunchinatorYearOneRobot2026()
 {
     rev::spark::SparkMaxConfig configs{};
     configs.Inverted(false);
-    configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kBrake);
+    configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kCoast);
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
     configs.ClosedLoopRampRate(0.25);
