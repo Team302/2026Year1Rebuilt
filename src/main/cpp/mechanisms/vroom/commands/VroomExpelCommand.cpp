@@ -19,8 +19,8 @@
 
 using namespace VroomCommands;
 
-static constexpr double m_feedinatorTarget{-12.0};
-static constexpr double m_launchinatorTarget{-10.0};
+static constexpr double m_feedinatorTarget{10.0};
+static constexpr double m_vroominatorTarget{-12.0};
 
 VroomExpelCommand::VroomExpelCommand(Vroom *mechanism) : wpi::cmd::CommandHelper<DragonTimedCommand, VroomExpelCommand>(mechanism), m_mechanism(mechanism)
 {
@@ -34,7 +34,7 @@ void VroomExpelCommand::Init()
 
     // Motor targets for Expel
     m_mechanism->UpdateTargetFeedinatorVoltageOut(m_feedinatorTarget);
-    m_mechanism->UpdateTargetLaunchinatorVoltageOut(m_launchinatorTarget);
+    m_mechanism->UpdateTargetVroominatorVoltageOut(m_vroominatorTarget);
 }
 
 void VroomExpelCommand::Run()

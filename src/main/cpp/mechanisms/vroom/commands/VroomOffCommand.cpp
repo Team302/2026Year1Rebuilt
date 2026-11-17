@@ -20,7 +20,7 @@
 using namespace VroomCommands;
 
 static constexpr double m_feedinatorTarget{0.0};
-static constexpr double m_launchinatorTarget{0.0};
+static constexpr double m_vroominatorTarget{0.0};
 
 VroomOffCommand::VroomOffCommand(Vroom *mechanism) : wpi::cmd::CommandHelper<DragonTimedCommand, VroomOffCommand>(mechanism), m_mechanism(mechanism)
 {
@@ -34,7 +34,7 @@ void VroomOffCommand::Init()
 
     // Motor targets for Off
     m_mechanism->UpdateTargetFeedinatorVoltageOut(m_feedinatorTarget);
-    m_mechanism->UpdateTargetLaunchinatorVoltageOut(m_launchinatorTarget);
+    m_mechanism->UpdateTargetVroominatorVoltageOut(m_vroominatorTarget);
 }
 
 void VroomOffCommand::Run()

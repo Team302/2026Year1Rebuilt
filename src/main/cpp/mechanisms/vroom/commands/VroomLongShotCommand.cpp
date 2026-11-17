@@ -20,7 +20,7 @@
 using namespace VroomCommands;
 
 static constexpr double m_feedinatorTarget{12.0};
-static constexpr double m_launchinatorTarget{12.0};
+static constexpr double m_vroominatorTarget{12.0};
 
 VroomLongShotCommand::VroomLongShotCommand(Vroom *mechanism) : wpi::cmd::CommandHelper<DragonTimedCommand, VroomLongShotCommand>(mechanism), m_mechanism(mechanism)
 {
@@ -34,7 +34,7 @@ void VroomLongShotCommand::Init()
 
     // Motor targets for LongShot
     m_mechanism->UpdateTargetFeedinatorVoltageOut(m_feedinatorTarget);
-    m_mechanism->UpdateTargetLaunchinatorVoltageOut(m_launchinatorTarget);
+    m_mechanism->UpdateTargetVroominatorVoltageOut(m_vroominatorTarget);
 }
 
 void VroomLongShotCommand::Run()

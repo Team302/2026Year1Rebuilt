@@ -65,7 +65,7 @@ void Vroom::CreateYearOneRobot2026()
 
     // --- Hardware Setup ---
     m_feedinatorMotor = new rev::spark::SparkMax(0, 4, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_launchinatorMotor = new rev::spark::SparkMax(0, 5, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_vroominatorMotor = new rev::spark::SparkMax(0, 5, rev::spark::SparkLowLevel::MotorType::kBrushed);
 
     // --- Control Data Setup ---
     m_voltageOut = new ControlData(
@@ -115,7 +115,7 @@ void Vroom::InitializeSparkMaxLaunchinatorYearOneRobot2026()
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
     configs.ClosedLoopRampRate(0.25);
-    m_launchinatorMotor->Configure(configs, rev::ResetMode::kResetSafeParameters, rev::PersistMode::kPersistParameters);
+    m_vroominatorMotor->Configure(configs, rev::ResetMode::kResetSafeParameters, rev::PersistMode::kPersistParameters);
 }
 
 void Vroom::SetCurrentState(int state, bool run)
@@ -153,7 +153,7 @@ void Vroom::Periodic()
 void Vroom::Update()
 {
     m_feedinatorMotor->GetClosedLoopController().SetSetpoint(*m_feedinatorActiveTarget, rev::spark::SparkLowLevel::ControlType::kVoltage);
-    m_launchinatorMotor->GetClosedLoopController().SetSetpoint(*m_launchinatorActiveTarget, rev::spark::SparkLowLevel::ControlType::kVoltage);
+    m_vroominatorMotor->GetClosedLoopController().SetSetpoint(*m_vroominatorActiveTarget, rev::spark::SparkLowLevel::ControlType::kVoltage);
 }
 
 ControlData *Vroom::GetControlData(string name)
@@ -171,7 +171,7 @@ void Vroom::DataLog(uint64_t timestamp)
     // Control Requests/Targets
     LogDoubleData(timestamp, m_loggingFeedinatorTargetPath, m_feedinatorVoltageOut);
     LogStringData(timestamp, m_loggingFeedinatorControlRequest, "kVoltage");
-    LogDoubleData(timestamp, m_loggingLaunchinatorTargetPath, m_launchinatorVoltageOut);
+    LogDoubleData(timestamp, m_loggingLaunchinatorTargetPath, m_vroominatorVoltageOut);
     LogStringData(timestamp, m_loggingLaunchinatorControlRequest, "kVoltage");
 }
 
