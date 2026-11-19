@@ -54,10 +54,10 @@ void Chassis::CreateYearOneRobot2026()
     Logger::GetLogger()->LogData(LOGGER_LEVEL::PRINT, string("Initializing mechanism"), string("Chassis for YEARONEROBOT_2026"), "");
 
     // --- Hardware Setup ---
-    m_leftLeaderMotor = new rev::spark::SparkMax(0, 0, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_leftFollowerMotor = new rev::spark::SparkMax(0, 1, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_rightLeaderMotor = new rev::spark::SparkMax(0, 2, rev::spark::SparkLowLevel::MotorType::kBrushed);
-    m_rightFollowerMotor = new rev::spark::SparkMax(0, 3, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_leftLeaderMotor = new rev::spark::SparkMax(0, 22, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_leftFollowerMotor = new rev::spark::SparkMax(0, 23, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_rightLeaderMotor = new rev::spark::SparkMax(0, 20, rev::spark::SparkLowLevel::MotorType::kBrushed);
+    m_rightFollowerMotor = new rev::spark::SparkMax(0, 21, rev::spark::SparkLowLevel::MotorType::kBrushed);
 
     // --- Control Data Setup ---
     m_percentOut = new ControlData(
@@ -94,7 +94,7 @@ void Chassis::InitializeYearOneRobot2026()
 void Chassis::InitializeSparkMaxLeftLeaderYearOneRobot2026()
 {
     rev::spark::SparkMaxConfig configs{};
-    configs.Inverted(false);
+    configs.Inverted(true);
     configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kBrake);
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
@@ -105,12 +105,12 @@ void Chassis::InitializeSparkMaxLeftLeaderYearOneRobot2026()
 void Chassis::InitializeSparkMaxLeftFollowerYearOneRobot2026()
 {
     rev::spark::SparkMaxConfig configs{};
-    configs.Inverted(false);
+    configs.Inverted(true);
     configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kBrake);
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
     configs.ClosedLoopRampRate(0.25);
-    configs.Follow(0, true);
+    configs.Follow(22, false);
     m_leftFollowerMotor->Configure(configs, rev::ResetMode::kResetSafeParameters, rev::PersistMode::kPersistParameters);
 }
 
@@ -133,7 +133,7 @@ void Chassis::InitializeSparkMaxRightFollowerYearOneRobot2026()
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
     configs.ClosedLoopRampRate(0.25);
-    configs.Follow(2, true);
+    configs.Follow(20, false);
     m_rightFollowerMotor->Configure(configs, rev::ResetMode::kResetSafeParameters, rev::PersistMode::kPersistParameters);
 }
 

@@ -114,15 +114,15 @@ public:
     m_feedinatorVoltageOut = setpoint;
     m_feedinatorActiveTarget = &m_feedinatorVoltageOut;
   }
-  void UpdateTargetLaunchinatorVoltageOut(double setpoint)
+  void UpdateTargetVroominatorVoltageOut(double setpoint)
   {
-    m_launchinatorVoltageOut = setpoint;
-    m_launchinatorActiveTarget = &m_launchinatorVoltageOut;
+    m_vroominatorVoltageOut = setpoint;
+    m_vroominatorActiveTarget = &m_vroominatorVoltageOut;
   }
 
   // Hardware Getters
   rev::spark::SparkMax *GetFeedinatorSparkMax() const { return m_feedinatorMotor; }
-  rev::spark::SparkMax *GetLaunchinatorSparkMax() const { return m_launchinatorMotor; }
+  rev::spark::SparkMax *GetVroominatorSparkMax() const { return m_vroominatorMotor; }
 
   // ControlData Getters
   ControlData *GetVoltageOutControlData() const { return m_voltageOut; }
@@ -168,16 +168,16 @@ private:
 
   // Hardware Declarations
   rev::spark::SparkMax *m_feedinatorMotor = nullptr;
-  rev::spark::SparkMax *m_launchinatorMotor = nullptr;
+  rev::spark::SparkMax *m_vroominatorMotor = nullptr;
 
   // Control Data Declarations
   ControlData *m_voltageOut = nullptr;
 
   // Control requested
   double m_feedinatorVoltageOut{0.0};
-  double m_launchinatorVoltageOut{0.0};
+  double m_vroominatorVoltageOut{0.0};
   double *m_feedinatorActiveTarget = &m_feedinatorVoltageOut;
-  double *m_launchinatorActiveTarget = &m_launchinatorVoltageOut;
+  double *m_vroominatorActiveTarget = &m_vroominatorVoltageOut;
 
   // Cached Sensor Values
 

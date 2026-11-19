@@ -19,8 +19,8 @@
 
 using namespace VroomCommands;
 
-static constexpr double m_feedinatorTarget{12.0};
-static constexpr double m_launchinatorTarget{0.0};
+static constexpr double m_feedinatorTarget{-12.0};
+static constexpr double m_vroominatorTarget{12.0};
 
 VroomIntakeCommand::VroomIntakeCommand(Vroom *mechanism) : wpi::cmd::CommandHelper<DragonTimedCommand, VroomIntakeCommand>(mechanism), m_mechanism(mechanism)
 {
@@ -34,7 +34,7 @@ void VroomIntakeCommand::Init()
 
     // Motor targets for Intake
     m_mechanism->UpdateTargetFeedinatorVoltageOut(m_feedinatorTarget);
-    m_mechanism->UpdateTargetLaunchinatorVoltageOut(m_launchinatorTarget);
+    m_mechanism->UpdateTargetVroominatorVoltageOut(m_vroominatorTarget);
 }
 
 void VroomIntakeCommand::Run()
