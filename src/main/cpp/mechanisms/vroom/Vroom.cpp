@@ -110,7 +110,7 @@ void Vroom::InitializeSparkMaxFeedinatorYearOneRobot2026()
 void Vroom::InitializeSparkMaxLaunchinatorYearOneRobot2026()
 {
     rev::spark::SparkMaxConfig configs{};
-    configs.Inverted(false);
+    configs.Inverted(true);
     configs.SetIdleMode(rev::spark::SparkBaseConfig::IdleMode::kCoast);
     configs.SmartCurrentLimit(40);
     configs.OpenLoopRampRate(0.1);
